@@ -62,9 +62,14 @@ with a2:
     with c2:
         st.markdown(f"- 学历：{education_options}")
         st.markdown(f"- 位置：{position}")
-        st.markdown(f"- 技能：{skill_options}")
         st.markdown(f"- 工作经验：{job_experience}")
-        st.markdown(f"- 语言能力：{lang_options}")
+        skill_text = ', '.join(skill_options) if skill_options else "无"
+        st.write('技能：', skill_text)
+        
+        # 语言能力：用逗号分隔
+        lang_text = ', '.join(lang_options) if lang_options else "无"
+        st.write('语言能力：', lang_text)
+       
 
     st.markdown("------")  # 分隔线
     st.subheader("👧个人简介")
@@ -73,3 +78,4 @@ with a2:
     else:
         st.markdown("（请在左侧填写个人简介）")
      
+
